@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 
-const Item = new Schema(
+const Movie = new Schema(
   {
     title: { type: String, required: true },
     director:{type: String, required: true},
@@ -14,4 +14,4 @@ const Item = new Schema(
   {timestamps: true}
 )
 
-module.exports = mongoose.model('items', Item)
+module.exports = mongoose.model('movies', Movie)

@@ -1,9 +1,9 @@
-const Movie = require('../models/movie')
+const Movie = require('../models/Movie')
 
 const createMovie = async (req, res) => {
   try {
     const movie = await new Movie(req.body)
-    await Movie.save()
+    await movie.save()
     return res.status(201).json({
       movie,
     })
@@ -26,7 +26,7 @@ const getMovieById = async (req, res) => {
     const { id } = req.params;
     const movie = await Movie.findById(id)
     if (movie) {
-      return res.status(200).json({ Movie });
+      return res.status(200).json({ movie });
 }
   return res.status(404).send('movie with the specified ID does not exist')
   } catch (error) {
